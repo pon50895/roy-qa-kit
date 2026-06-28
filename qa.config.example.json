@@ -1,0 +1,70 @@
+{
+  "project": "<專案名>",
+  "environments": {
+    "uat": {
+      "envFile": ".env.uat",
+      "external": "bypass"
+    },
+    "prod": {
+      "envFile": ".env.prod",
+      "external": "live"
+    }
+  },
+  "viewports": {
+    "mobile": [
+      390,
+      844
+    ],
+    "ipad": [
+      820,
+      1180
+    ],
+    "pc": [
+      1280,
+      800
+    ]
+  },
+  "triggers": {
+    "commit": [
+      "@mock"
+    ],
+    "deploy": [
+      "@smoke"
+    ],
+    "ticketFix": [
+      "<該票tag>",
+      "@regression"
+    ],
+    "release": [
+      "all"
+    ],
+    "prodOnly": [
+      "@prod-only"
+    ]
+  },
+  "ticketsSource": "docs/templates/traceability-matrix.md",
+  "severity": {
+    "P0": "阻擋上線/核心走不通/資料錯/資安重大",
+    "P1": "影響核心，有workaround上線前清",
+    "P2": "次要/後台/優化",
+    "P3": "美化/文案"
+  },
+  "priorityRules": {
+    "P0": [
+      "severity=P0",
+      "security",
+      "dataIntegrity",
+      "blocksRelease&!hasWorkaround"
+    ],
+    "P1": [
+      "severity=P1",
+      "criticalPath",
+      "severity=P0&hasWorkaround"
+    ],
+    "P2": [
+      "severity=P2",
+      "externalDependency&!criticalPath"
+    ],
+    "manualOverride": "priorityOverride.value 永遠贏，需 reason"
+  }
+}
