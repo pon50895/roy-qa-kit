@@ -1,0 +1,3 @@
+#!/bin/sh
+# de-id/機密 gate：掃到就擋 commit
+node scripts/scan.mjs || { echo "✗ commit 被擋：先移除機密/識別詞"; exit 1; }

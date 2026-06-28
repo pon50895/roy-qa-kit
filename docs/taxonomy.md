@@ -107,3 +107,20 @@
 | **@live** | | | | | | |
 
 > 打勾=這格要案例。不是每格都要,但要「有意識地決定不做」,不是漏掉。
+
+---
+
+# 專項測試類型（非功能 / 安全，獨立元件）
+
+除了上面 6 類功能型 + 維度軸，這些是**獨立元件**（各有 doc + 範例），也用 tag 標、進矩陣：
+
+| tag | 類型 | 元件 | 何時 |
+|---|---|---|---|
+| `@auth` | 權限 / RBAC / 越權 | permission-testing.md（直打API、矩陣驅動） | 改權限 / release |
+| `@security` | 資安（OWASP） | security-testing.md（headers/injection/rate/敏感資料 + ZAP/SCA） | release / 資安週期 |
+| `@contract` | 契約（外部API） | contract 範例（schema 斷言） | 對方介面變動 |
+| `@a11y` | 無障礙 | a11y 範例（axe + WCAG） | 前端改動 |
+| `@perf` | 前端效能 | performance-testing.md（Playwright/Web Vitals） | UI 改 / release |
+| （k6） | 負載/壓力 | perf/（獨立 gate，非 Playwright） | release / 吃資源功能後 |
+
+> 優先序：權限/資安屬 P0 面（security 旗標→P0）；效能/壓力可視專案延後（風險導向只壓高風險點）。
