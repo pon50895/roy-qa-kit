@@ -19,7 +19,8 @@
     "security": "node scripts/security-scan.mjs",
     "test:security": "playwright test --grep @security",
     "test:perf": "playwright test --grep @perf",
-    "perf:load": "k6 run perf/load-test.example.js"
+    "perf:load": "k6 run perf/load-test.example.js",
+    "metrics": "node scripts/metrics.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.0",
