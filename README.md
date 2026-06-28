@@ -1,5 +1,7 @@
 # e2e-qa-framework — 通用 E2E/QA 框架
 
+![Playwright](https://img.shields.io/badge/Playwright-Test-2EAD33?logo=playwright) ![License](https://img.shields.io/badge/license-MIT-blue)
+
 Playwright Test 為核心，把「方法 + 分類 + 矩陣 + 嚴重度/優先度 + 多環境 + 報告」做成**通用、config 驅動、可套到任何專案**。
 
 ## 核心理念（docs/）
