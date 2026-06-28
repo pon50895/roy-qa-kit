@@ -20,7 +20,9 @@
     "test:security": "playwright test --grep @security",
     "test:perf": "playwright test --grep @perf",
     "perf:load": "k6 run perf/load-test.example.js",
-    "metrics": "node scripts/metrics.mjs"
+    "metrics": "node scripts/metrics.mjs",
+    "health": "node scripts/health-check.mjs",
+    "pretest": "node scripts/health-check.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.0",
