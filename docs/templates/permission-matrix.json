@@ -1,0 +1,11 @@
+{
+  "roles": ["admin", "manager", "operator", "viewer", "anonymous"],
+  "endpoints": [
+    { "name": "讀清單",   "method": "GET",    "path": "/api/resource",        "allow": ["admin","manager","operator","viewer"] },
+    { "name": "建立",     "method": "POST",   "path": "/api/resource",        "allow": ["admin","manager"] },
+    { "name": "更新",     "method": "PATCH",  "path": "/api/resource/{id}",   "allow": ["admin","manager"] },
+    { "name": "刪除",     "method": "DELETE", "path": "/api/resource/{id}",   "allow": ["admin"] },
+    { "name": "匯出",     "method": "GET",    "path": "/api/resource/export", "allow": ["admin","manager"] }
+  ],
+  "note": "allow 以外的角色（含 anonymous）→ 期望 401/403。{id} 由 fixture 帶。"
+}
