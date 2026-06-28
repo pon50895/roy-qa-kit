@@ -15,7 +15,9 @@
     "export": "node helpers/export-results.mjs && python3 helpers/results_to_xlsx.py",
     "report": "playwright show-report",
     "scan": "node scripts/scan.mjs",
-    "precommit": "node scripts/scan.mjs"
+    "precommit": "node scripts/scan.mjs",
+    "security": "node scripts/security-scan.mjs",
+    "test:security": "playwright test --grep @security"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.0",
