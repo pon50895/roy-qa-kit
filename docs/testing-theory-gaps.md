@@ -6,7 +6,7 @@
 | equivalence partitioning | @value | |
 | boundary value analysis | @edge | |
 | state transition | @logic(狀態) | |
-| decision table | ⬜ | ★ 多條件組合(保單/序號×年齡×本人/法代→OTP對象) |
+| decision table | ⬜ | ★ 多條件組合(路徑A/路徑B×年齡×一般/代理→通知對象) |
 | pairwise/combinatorial | ⬜ | viewport×env×path 減量 |
 | use case | @integration | |
 | experience-based(error guessing/探索) | ⬜ | charter-based exploratory，補盲區 |
@@ -29,4 +29,4 @@
 contract: Pact / schema 驗 ‖ mock: MSW / Playwright route ‖ perf: k6 ‖ a11y: @axe-core/playwright ‖ visual: Playwright snapshot ‖ BDD(可選): Gherkin。
 
 ## 本專案優先序
-1) Contract test 外部 API  2) 決策表(OTP對象/狀態)  3) a11y(axe)  4) defect 指標+RCA 模板  5) 金字塔下推 @mock。
+1) Contract test 外部 API  2) 決策表(通知對象/狀態)  3) a11y(axe)  4) defect 指標+RCA 模板  5) 金字塔下推 @mock。

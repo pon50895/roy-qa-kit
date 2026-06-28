@@ -13,7 +13,12 @@
     "test:uat": "ENV=uat playwright test",
     "test:prod": "ENV=prod playwright test",
     "export": "node helpers/export-results.mjs && python3 helpers/results_to_xlsx.py",
-    "report": "playwright show-report"
+    "report": "playwright show-report",
+    "scan": "node scripts/scan.mjs",
+    "precommit": "node scripts/scan.mjs"
   },
-  "devDependencies": { "@playwright/test": "^1.48.0", "dotenv": "^16.4.5" }
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "dotenv": "^16.4.5"
+  }
 }

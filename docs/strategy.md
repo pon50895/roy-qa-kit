@@ -36,7 +36,7 @@
 | 觸發時機 | 測什麼（套件） | 環境 | 性質 |
 |---|---|---|---|
 | **每次 commit / CI** | `@mock` 全部 | 任意（無需後端）| 快、回歸、防退化 |
-| **每次部署後** | smoke（關鍵路徑：登入/兌換碼路徑/報告上傳）| 該部署 env | `@live` 少量、冒煙 |
+| **每次部署後** | smoke（關鍵路徑：登入/路徑B/報告上傳）| 該部署 env | `@live` 少量、冒煙 |
 | **RD 修一張票 → 審核中** | 該票 TC + 該功能回歸列 | UAT | `@mock`大量 + `@live`少量 |
 | **前端Web 前端改動** | `@visual` 三 viewport(mobile/ipad/pc) | UAT | snapshot 比對 |
 | **release / 7-8 前 / 每週五** | **全 TC**（所有類型×維度）| UAT（+ prod-only gate 項）| 完整回歸 → 出 briefing |

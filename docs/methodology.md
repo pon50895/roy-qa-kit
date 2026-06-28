@@ -8,7 +8,7 @@
 
 ```
 1 定義達標   AC 寫成「可觀察行為 + 正例 + 反例」，不是「程式碼有那段」
-2 選乾淨料   配 fixture（未用兌換碼/未燒保單/新帳號），標新鮮度；驗修正必用修正後新建的料
+2 選乾淨料   配 fixture（未用代碼/未燒路徑A/新帳號），標新鮮度；驗修正必用修正後新建的料
 3 走行為     真的跑 end-to-end / 打 API，不抽樣不讀 source
 4 三層驗     code層(有沒有那段) / data層(欄位值對不對) / behavior層(跑一遍對不對) — P0/P1 三層都碰
 5 反例攻擊   填錯/漏填/回退/重複/重進 → 試著弄壞它，壞不掉才算過
@@ -84,7 +84,7 @@ e2e/
   fixtures/      登入、前端Web session、測試資料
   tests/
     admin/       *.spec.ts  (API + 後台)
-    liff/        *.spec.ts  (兌換碼/保單流程)
+    liff/        *.spec.ts  (代碼/路徑A流程)
     report/      *.spec.ts  (PDF pipeline)
   helpers/       pdf.py, evidence/
 ```
