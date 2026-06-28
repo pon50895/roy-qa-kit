@@ -28,7 +28,7 @@
 3. **P2** ← `severity=P2` 或 (`externalDependency` 且 !`criticalPath`)
 4. **P3** ← 其餘
 
-> `externalDependency`（等第三方）通常**降一階**可排程性、但若同時 `criticalPath` 不降（例：等新壽 API 但卡主流程）。
+> `externalDependency`（等第三方）通常**降一階**可排程性、但若同時 `criticalPath` 不降（例：等外部 API 但卡主流程）。
 
 ### 手動覆寫（永遠贏，但要理由）
 每張票可設 `priorityOverride: { value, reason, by, at }`。覆寫存證、可回溯。
