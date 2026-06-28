@@ -17,7 +17,9 @@
     "scan": "node scripts/scan.mjs",
     "precommit": "node scripts/scan.mjs",
     "security": "node scripts/security-scan.mjs",
-    "test:security": "playwright test --grep @security"
+    "test:security": "playwright test --grep @security",
+    "test:perf": "playwright test --grep @perf",
+    "perf:load": "k6 run perf/load-test.example.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.0",
