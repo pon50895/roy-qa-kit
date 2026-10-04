@@ -52,6 +52,8 @@ ENV=uat npm test && npm run export   # 跑測試 → 產 HTML + CSV + XLSX
 ## 核心理念（docs/）
 - `methodology.md` — 測試 Loop(7步) + 停止條件 + pre-flight gate（會自我修正）
 - `taxonomy.md` — 6 測試類型(@type/@value+edge/@logic/@file/@sanity/@integration) × 維度(@auth/@visual/@mock/@live/狀態)
+- `methodology.md` 一之三 — 結論三判定：confirmed / needs_validation / rejected（原因斷言要證據）
+- `test-maintenance.md` — 變異測試須證明落地（路徑 + 該行存在 + baseline）、負對照（沒見過失敗的檢查=未驗）
 - `severity-priority.md` — P0~P3 定義 + 優先度自動規則 + 手動覆寫
 - `strategy.md` — 要測哪些 / 怎麼測 / 哪一次測（觸發→套件→環境）
 - `templates/` — 測試案例 / 追蹤矩陣RTM / 功能矩陣 / 週報briefing 範本
