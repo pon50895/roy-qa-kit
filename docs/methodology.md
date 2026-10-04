@@ -24,6 +24,8 @@
 - [ ] 這是修正前的舊資料/已測帳號嗎？→ 換乾淨料
 - [ ] code/data/behavior 碰了幾層？
 - [ ] 在 UAT 是不是被 bypass 假過（OTP/captcha/lineId）？→ 標需 prod
+- [ ] 這個檢查有看過它失敗嗎？→ 沒有就是未驗（負對照，見 `test-maintenance.md`）
+- [ ] 結論是 confirmed 嗎？沒觀察到的原因 → `needs_validation`（一之三）
 
 ---
 
@@ -52,6 +54,23 @@
 - **AC 綠** = 三格都有**實測結果 + 證據**。
 - **票 PASS** = 該票所有 AC 綠。**禁「大致 PASS」**。
 - code 層（bundle grep / 讀 source）只能當**輔助**，不能單獨結案；behavior 層（實跑）才是判定依據。
+
+---
+
+## 一之三、結論三判定（發現 / 原因斷言適用；測試 PASS/FAIL 判定仍照第二節）
+
+> 為什麼：沒觀察到的原因被寫成事實，會一路傳到報告與 commit。這是「誠實標不確定」（`techniques.md`）的格式化。
+
+| 判定 | 條件 | 不可以 |
+|---|---|---|
+| `confirmed` | 附證據：`file:line`，或貼上的指令與輸出 | 只有推論、只有第三方文件 |
+| `needs_validation` | 寫明**唯一**未解的事實 + 怎麼觀察（`blocker:`）；**不評嚴重度** | 當成「先放著」的猜測停車場 |
+| `rejected` | 已被證據推翻；留一行紀錄，沒有新證據不得再提 | 默默刪掉 |
+
+- 只有 `confirmed` 才評嚴重度（見 `severity-priority.md`）。
+- 因果句（「X 失敗是因為 Y」）沒有觀察就只寫現象，原因標 `needs_validation`。
+- 發現 / 報告每條以判定開頭：`confirmed:` / `needs_validation:` / `rejected:`。
+- 驗證者不得是寫出該結論的人（fresh-context 重驗，目標是推翻它）。
 
 ---
 
